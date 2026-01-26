@@ -27,7 +27,7 @@ exec --no-startup-id ~/.config/polybar/launch.sh
 
 exec --no-startup-id picom -b
 
-exec --no-startup-id feh --bg-scale ~/Pictures/flower_purple.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/flower_purple.jpg
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -242,5 +242,5 @@ client.background        $base
 
 default_border pixel 3
 hide_edge_borders smart
-gaps inner 8px
-gaps outer 4px
+gaps inner 16px
+gaps outer -10px
