@@ -9,8 +9,8 @@
   separatorcolor:              @foreground;
   urgent-foreground:           @red;
   alternate-urgent-background: @lightbg;
-  lightbg:                     @mantle;
-  background-color:            transparent;
+  lightbg:                     @base;
+  background-color:            @base;
   border-color:                @foreground;
   normal-background:           @background;
   selected-urgent-background:  @red;
@@ -18,18 +18,18 @@
   spacing:                     2;
   alternate-normal-foreground: @foreground;
   urgent-background:           @background;
-  selected-normal-foreground:  @lightbg;
+  selected-normal-foreground:  @lightfg;
   active-foreground:           @blue;
   background:                  @base;
   selected-active-background:  @blue;
   active-background:           @background;
-  selected-normal-background:  @lightfg;
+  selected-normal-background:  @lavender;
   alternate-normal-background: @lightbg;
   foreground:                  @text;
   selected-urgent-foreground:  @background;
   normal-foreground:           @foreground;
   alternate-urgent-foreground: @red;
-  alternate-active-foreground: @blue;
+  alternate-active-foreground: @base;
 
 }
 element {
@@ -75,29 +75,31 @@ element alternate.active {
     text-color:       @alternate-active-foreground;
 }
 element-text {
-    background-color: transparent;
+    background-color: @transparent;
     cursor:           inherit;
     highlight:        inherit;
     text-color:       inherit;
 }
 element-icon {
-    background-color: transparent;
-    size:             1.0000em ;
+    background-color: @transparent;
+    size:             2.0000em ;
     cursor:           inherit;
     text-color:       inherit;
 }
 window {
-    padding:          5;
+    padding:          0;
     background-color: @background;
     border:           3;
-	border-radius:    4;
+    width: 800px;
+    height: 470px;
+    border-radius: 4px;
 }
 mainbox {
     padding: 0;
     border:  0;
 }
 message {
-    padding:      1px ;
+    padding:      0px ;
     border-color: @separatorcolor;
     border:       2px dash 0px 0px ;
 }
@@ -105,17 +107,17 @@ textbox {
     text-color: @foreground;
 }
 listview {
-    padding:      2px 0px 0px ;
+    padding:      0px 0px 0px ;
     scrollbar:    true;
     border-color: @separatorcolor;
-    spacing:      2px ;
+    spacing:      0px ;
     fixed-height: 0;
-    border:       2px dash 0px 0px ;
+    border:       2px solid 0px 0px ;
 }
 scrollbar {
-    width:        4px ;
+    width:        3px ;
     padding:      0;
-    handle-width: 8px ;
+    handle-width: 3px ;
     border:       0;
     handle-color: @normal-foreground;
 }
@@ -134,22 +136,22 @@ button selected {
 }
 num-filtered-rows {
     expand:     false;
-    text-color: Gray;
+    text-color: @text;
 }
 num-rows {
     expand:     false;
-    text-color: Gray;
+    text-color: @text;
 }
 textbox-num-sep {
     expand:     false;
     str:        "/";
-    text-color: Gray;
+    text-color: @text;
 }
 inputbar {
-    padding:    1px ;
+    padding:    1px 2px 0;
     spacing:    0px ;
     text-color: @normal-foreground;
-    children:   [ "prompt","textbox-prompt-colon","entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
+    children:   [ "entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
 }
 case-indicator {
     spacing:    0;
@@ -157,9 +159,9 @@ case-indicator {
 }
 entry {
     text-color:        @normal-foreground;
-    cursor:            text;
+    cursor:            @text;
     spacing:           0;
-    placeholder-color: Gray;
+    placeholder-color: @background;
     placeholder:       "Type to filter";
 }
 prompt {
@@ -167,7 +169,7 @@ prompt {
     text-color: @normal-foreground;
 }
 textbox-prompt-colon {
-    margin:     0px 0.3000em 0.0000em 0.0000em ;
+    margin:     0px 0.0000em 0.0000em 0.0000em ;
     expand:     false;
     str:        ":";
     text-color: inherit;

@@ -2,7 +2,7 @@
 size = 9.0
 
 [window]
-opacity = 0.85
+opacity = 0.78
 blur = true
 dynamic_padding = true
 
