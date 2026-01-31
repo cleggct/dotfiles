@@ -242,8 +242,8 @@ client.background        $base
 
 default_border pixel 3
 hide_edge_borders smart_no_gaps
-gaps inner 32px
+gaps inner 16px
 gaps outer 16px
-gaps horizontal 48px
-gaps vertical 32px
-smart_gaps on
+gaps horizontal -4px
+gaps vertical -4px
+smart_gaps off
